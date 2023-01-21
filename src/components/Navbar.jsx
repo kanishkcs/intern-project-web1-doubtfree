@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import SearchIcon from "@mui/icons-material/Search";
-import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
+import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import { Link, useLocation } from "react-router-dom";
 
 //  Main Container CSS
@@ -17,12 +17,7 @@ const Top = styled.div`
   margin-top: 25px;
   margin-right: 10px;
   margin-left: 10px;
-  @media (max-width: 480px) {
-    margin-left: 0;
-    margin-right: 0;
-    justify-content: space-around;
-    font-size: 0.6rem;
-  }
+  
 `;
 
 const LogoContainer = styled.div`
@@ -33,26 +28,20 @@ const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
-  @media (max-width: 415px) {
-    width: 45px;
-    height: 45px;
-  }
-`;
-
-const Logo = styled.img`
-  border-radius: 40%;
+  
 `;
 
 const Span = styled.span`
   color: white;
   padding-top: 20px;
-  @media (max-width: 415px) {
+  @media only screen and (max-width: 500px) {
     padding-top: 15px;
     font-size: 0.4rem;
   }
 `;
 const TopRight = styled.div`
   display: flex;
+ 
 `;
 const SearchContainer = styled.div`
   position: relative;
@@ -69,19 +58,28 @@ const Search = styled.input`
   &:active {
     border: none;
   }
-
-  @media (max-width: 852px) {
-    width: 200px;
+  @media only screen and (max-width: 860px) {
+    width: 450px;
   }
-  @media (max-width: 415px) {
+  @media only screen and (max-width: 808px) {
+    width: 400px;
+  }
+
+  
+  @media only screen and (max-width: 745px) {
+    width: auto;
+  }
+
+  @media only screen and (max-width: 502px) {
     width: 100px;
   }
 `;
 
 const ButtonContainer = styled.div`
   margin-left: 30px;
-  
+
   margin-right: 30px;
+
 `;
 const Button = styled.button`
   width: 6em;
@@ -89,7 +87,7 @@ const Button = styled.button`
   border-radius: 20px;
   font-size: 1rem;
   font-weight: 200;
-  background-color: white;
+  background-color: #fcf9f9;
   border: none;
   padding: 10px;
   margin-right: 8px;
@@ -99,19 +97,12 @@ const Button = styled.button`
   &:hover {
     font-size: 1.2rem;
   }
-  @media (max-width: 852px) {
-    margin-left: 0;
-
-    margin-right: 0;
+  @media only screen and (max-width: 500px) {
     width: auto;
-    &:hover {
-      font-size: 0.7rem;
-    }
-  }
-  @media (max-width: 415px) {
-    margin-left: 0;
-    margin-right: 5px;
-    font-size: 0.6rem;
+    margin: 0;
+    
+    padding:none;
+    font-size: 0.8rem;
   }
 `;
 
@@ -121,21 +112,34 @@ const Bottom = styled.div`
   justify-content: space-between;
 `;
 const Nav = styled.div`
-   display: flex;
+  display: flex;
   justify-content: space-evenly;
   flex: 1;
-  @media (max-width: 480px){
+  @media only screen and (max-width: 766px) {
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-around;
-    
+    display: none;
   }
-
 `;
 
-const Toggle = styled.button`
+// Side bar
+
+const Sidebar = styled.div`
   display: none;
-`
+  @media only screen and (max-width: 766px) {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    width: 260px; /* adjust as needed */
+    height: 300px;
+    padding-right: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* transparent black */
+  }
+`;
 
 const NavItems = styled.a`
   color: white;
@@ -161,6 +165,7 @@ const Navbar = () => {
             <Button>Login</Button>
             <Button>Sighn Up</Button>
           </ButtonContainer>
+          
         </TopRight>
       </Top>
       <Bottom>
@@ -172,7 +177,14 @@ const Navbar = () => {
           <NavItems href="www.goog.com">TECHINCAL & MARKETING </NavItems>
           <NavItems href="www.goog.com">FUNDING & BANKING </NavItems>
         </Nav>
-        <Toggle><KeyboardDoubleArrowLeftIcon/></Toggle>
+        <Sidebar>
+          <NavItems href="www.goog.com">HOME</NavItems>
+          <NavItems href="www.goog.com">IDEA VALIDATION</NavItems>
+          <NavItems href="www.goog.com">COMPANY FORMATION</NavItems>
+          <NavItems href="www.goog.com">MENTORING & INCUBATION</NavItems>
+          <NavItems href="www.goog.com">TECHINCAL & MARKETING </NavItems>
+          <NavItems href="www.goog.com">FUNDING & BANKING </NavItems>
+        </Sidebar>
       </Bottom>
     </Container>
   );
