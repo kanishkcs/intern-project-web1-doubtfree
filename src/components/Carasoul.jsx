@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import pic from "../assets/png.png"
 const Container = styled.div`
-  width: 100%;
-  height: auto;
+  
   
 `;
 
@@ -18,6 +17,12 @@ const Div1 = styled.div`
   background-color: darkred;
   border-radius: 50px;
   z-index: 1;
+  @media  (max-width: 500px){
+    width: 300px;
+    height: 470px;
+    font-size:auto;
+    left: 10%;
+  }
 `;
 const Div2 = styled.div`
   position: absolute;
@@ -41,10 +46,24 @@ const Div2 = styled.div`
   font-size: 1em;
   border-radius: 40px;
   z-index: 2;
+
+  @media  (max-width: 500px){
+    
+    justify-content: center;
+    width: 250px;
+    height: 400px;
+   left: 16%;
+  }
+ 
 `;
 
 const Heading = styled.h1`
   color: white;
+  @media  (max-width: 500px){
+    font-size: 15px;
+    word-wrap: break-word;
+    margin-left: 20px;
+  }
 `;
 
 const TryNow = styled.button`
@@ -58,8 +77,13 @@ const TryNow = styled.button`
   cursor: pointer;
   &:hover {
    
-    text-indent: -20px;
+    
      }
+     @media  (max-width: 500px){
+    font-size: 1em;
+    width: 40%;
+  height: 30px;
+  }
 `;
 
 const Png = styled.img`
@@ -67,6 +91,10 @@ const Png = styled.img`
     top: 30%;
     z-index: 3;
     left: 25%;
+    @media  (max-width: 500px){
+       display: none;
+   
+  }
 `
 const Carasoul = () => {
   return (

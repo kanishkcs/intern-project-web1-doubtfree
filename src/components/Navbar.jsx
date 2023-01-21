@@ -128,7 +128,7 @@ const Nav = styled.div`
 const Sidebar = styled.div`
   display: none;
   @media only screen and (max-width: 766px) {
-    display: flex;
+   
     align-items: flex-end;
     justify-content: space-around;
     flex-direction: column;
