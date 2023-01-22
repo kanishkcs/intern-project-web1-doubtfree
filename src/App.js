@@ -1,4 +1,4 @@
-import Carasoul from "./components/Carasoul";
+import Carasoul from "./components/Slider";
 import Navbar from "./components/Navbar";
 
 
