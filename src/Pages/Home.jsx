@@ -2,7 +2,7 @@ import React from 'react'
 import Slider from "../components/Slider";
 import Navbar from "../components/Navbar";
 import Services from '../components/Services';
-
+import Mission from '../components/Mission';
 
 
 const Home = () => {
@@ -12,6 +12,7 @@ const Home = () => {
     <Navbar/>
     <Slider/>
     <Services/>
+    <Mission/>
     </>
   )
 }

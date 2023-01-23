@@ -28,7 +28,12 @@ const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
-  
+  @media only screen and (max-width: 500px) {
+    padding-top: 5px;
+    font-size: 0.4rem;
+    width: 50px;
+  height: 50px;
+  }
 `;
 
 const Span = styled.span`

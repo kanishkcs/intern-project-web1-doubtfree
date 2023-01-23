@@ -19,25 +19,21 @@ const Item = styled.div`
   margin-top: 10%;
   border-radius: 20px;
   text-align: center;
-
+  cursor: pointer;
   @media only screen and (max-width: 500px) {
     height: 350px;
   }
 `;
 
 const Main = styled.div`
-  font-family: sans-serif;
   display: flex;
   justify-content: center;
   flex-direction: column;
   height: 100vh;
-  background: radial-gradient(
-    328px at 2.9% 15%,
-    rgb(191, 224, 251) 0%,
-    rgb(232, 233, 251) 25.8%,
-    rgb(252, 239, 250) 50.8%,
-    rgb(234, 251, 251) 77.6%,
-    rgb(240, 251, 244) 100.7%
+  background: linear-gradient(
+    68.6deg,
+    rgb(252, 165, 241) 1.8%,
+    rgb(181, 255, 255) 100.5%
   );
 `;
 
