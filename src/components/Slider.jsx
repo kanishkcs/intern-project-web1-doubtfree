@@ -6,7 +6,7 @@ import Carousel from "react-bootstrap/Carousel";
 
 
 const Container = styled.div`
- 
+ height: 100vh !important;
 `;
 
 const Div1 = styled.div`
@@ -25,6 +25,7 @@ const Div1 = styled.div`
     height: 470px !important;
     font-size: auto;
     left: 10%;
+    top: 70px;
   }
 `;
 const Div2 = styled.div`
@@ -55,6 +56,7 @@ const Div2 = styled.div`
     width: 250px;
     height: 400px;
     left: 16%;
+    top : 14%;
   }
 `;
 
