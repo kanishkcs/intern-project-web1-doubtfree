@@ -8,7 +8,6 @@ import Mission from '../components/Mission';
 const Home = () => {
   return (
     <>
-  
     <Slider/>
     <Services/>
     <Mission/>

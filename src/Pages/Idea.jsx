@@ -19,6 +19,7 @@ function Idea() {
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
             </ol>
         </div>
+        <h2>Fill your response here:</h2>
         <div className='idea-container'>
             <div className="left-idea-container">
                 <form>
@@ -51,6 +52,7 @@ function Idea() {
             </div>
     
             <div className="right-idea-container">
+                <h2>OR</h2>
                 <h2 >Connect directly to our expert.</h2>
                 <button>Expert Advice</button>
             </div>
