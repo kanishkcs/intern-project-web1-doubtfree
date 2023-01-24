@@ -8,6 +8,8 @@ import { Link, useLocation } from "react-router-dom";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  box-shadow: 1px 1px 10px #cab6cf;
+  border-radius: 5px;
 `;
 
 // Top of Navbar Starts Here
@@ -28,12 +30,7 @@ const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
-  @media only screen and (max-width: 500px) {
-    padding-top: 5px;
-    font-size: 0.4rem;
-    width: 50px;
-  height: 50px;
-  }
+  
 `;
 
 const Span = styled.span`
@@ -146,14 +143,7 @@ const Sidebar = styled.div`
   }
 `;
 
-const NavItems = styled.a`
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-`;
-
 const Navbar = () => {
-  let url = useLocation();
 
   return (
     <Container>
@@ -168,30 +158,31 @@ const Navbar = () => {
           </SearchContainer>
           <ButtonContainer>
             <Button>Login</Button>
-            <Button>Sighn Up</Button>
+            <Button>Sign Up</Button>
           </ButtonContainer>
           
         </TopRight>
       </Top>
       <Bottom>
         <Nav>
-          <NavItems href="www.goog.com">HOME</NavItems>
-          <NavItems href="www.goog.com">IDEA VALIDATION</NavItems>
-          <NavItems href="www.goog.com">COMPANY FORMATION</NavItems>
-          <NavItems href="www.goog.com">MENTORING & INCUBATION</NavItems>
-          <NavItems href="www.goog.com">TECHINCAL & MARKETING </NavItems>
-          <NavItems href="www.goog.com">FUNDING & BANKING </NavItems>
+          <Link className="nav-items" to="/">Home</Link>
+          <Link className="nav-items" to="/idea">Idea Validation</Link>
+          <Link className="nav-items" to="/company">Company Formation</Link>
+          <Link className="nav-items" to="/mentoring">MENTORING & INCUBATION</Link>
+          <Link className="nav-items" to="/technical">TECHINCAL & MARKETING</Link>
+          <Link className="nav-items" to="/funding">FUNDING & BANKING</Link>
         </Nav>
         <Sidebar>
-          <NavItems href="www.goog.com">HOME</NavItems>
-          <NavItems href="www.goog.com">IDEA VALIDATION</NavItems>
-          <NavItems href="www.goog.com">COMPANY FORMATION</NavItems>
-          <NavItems href="www.goog.com">MENTORING & INCUBATION</NavItems>
-          <NavItems href="www.goog.com">TECHINCAL & MARKETING </NavItems>
-          <NavItems href="www.goog.com">FUNDING & BANKING </NavItems>
+        <Link className="nav-items" to="/">Home</Link>
+          <Link className="nav-items" to="/idea">Idea Validation</Link>
+          <Link className="nav-items" to="/company">Company Formation</Link>
+          <Link className="nav-items" to="/mentoring">MENTORING & INCUBATION</Link>
+          <Link className="nav-items" to="/technical">TECHINCAL & MARKETING</Link>
+          <Link className="nav-items" to="/funding">FUNDING & BANKING</Link>
         </Sidebar>
       </Bottom>
     </Container>
+    // kahan jaana hai (konse path par jaana hai)
   );
 };
 
