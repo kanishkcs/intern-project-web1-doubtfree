@@ -1,11 +1,11 @@
 
 const mongoose = require("mongoose");
 const {Boolean} = require("webidl-conversions");
-const UserSchema = new mongoose.Schema(
+const users = new mongoose.Schema(
 
     {
         name: {type:String, required : true},
-        username:{type: String, required: true, unique:true},
+        mobile:{type: Number, required: true, unique:true},
         email:{type:String, required:true, unique:true},
         password:{type:String,required:true,unique:true},
         
@@ -13,4 +13,4 @@ const UserSchema = new mongoose.Schema(
     },{timestamps:true}
 )
 
-module.exports = mongoose.model("User",UserSchema)
+module.exports = mongoose.model("User",users)

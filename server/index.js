@@ -4,13 +4,23 @@ const app = express();
 const bodyParser = require('body-parser')
 require('dotenv').config()
 const cors = require('cors')
-
 app.use( bodyParser.json() );       
 
 
 app.use(bodyParser.urlencoded({     
  extended: true})); 
 app.use(cors())
+
+
+//Mongoose Schemas
+
+const User = require('./modal/users')
+const Idea = require('./modal/idea')
+
+
+
+
+
 
 
 
@@ -23,30 +33,8 @@ mongoose
     console.log(console.error(err));
   });
 
- 
 
 
-const userSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  mobile: String,
-  password: String,
-  
-});
-
-const ideaSchema = new mongoose.Schema({
-  problem: String,
-  others: String,
-  benifits: String,
-  keyfeature: String,
-  exists: String,
-  
-});
-
-
-const User = mongoose.model('Users', userSchema);
-
-const Idea = mongoose.model('Ideas', userSchema);
 
 
 app.get('/', (req, res)=>{
@@ -69,6 +57,7 @@ user.save((error) => {
     console.log(error);
   } else {
     console.log('User saved successfully!');
+
   } 
 });
 })
@@ -86,7 +75,7 @@ app.post('/idea', (req,res)=>{
     if (error) {
       console.log(error);
     } else {
-      console.log('User saved successfully!');
+      console.log('Idea saved successfully!');
     } 
   });
 })

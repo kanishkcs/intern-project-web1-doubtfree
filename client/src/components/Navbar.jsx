@@ -96,7 +96,14 @@ const Button = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: black;
+    background-image: linear-gradient(
+    to right,
+    
+  
+    #381e3b,
+    #4d1d4a,
+    #2e182a
+  );
     color: white;
   }
   @media only screen and (max-width: 500px) {
