@@ -22,31 +22,31 @@ function Idea() {
         <h2>Fill your response here:</h2>
         <div className='idea-container'>
             <div className="left-idea-container">
-                <form>
-                    <label className='form-label' for="question-1"> 
+                <form action='http://localhost:5000/idea' method='POST'>
+                    <label className='form-label' name="problem" for="question-1"> 
                         1. What problem are you solving?
                     </label>
-                    <textarea className='form-input' id="question-1" col="3" row="5" />
+                    <input className='form-input' name='problem' id="question-1" col="3" row="5" />
     
                     <label className='form-label' for="question-2">
                          2. How have others attempted to solve this problem before, and why did their solutions succeed or fail?
                     </label>
-                    <textarea className='form-input' id="question-2" col="3" row="5" />
+                    <input className='form-input' name='others' id="question-2" col="3" row="5" />
                     
                     <label className='form-label' for="question-3"> 
                         3. How many specific benefits for your product or idea can you list?
                     </label>
-                    <textarea className='form-input' id="question-3" col="3" row="5" />
+                    <input className='form-input' name='benifits' id="question-3" col="3" row="5" />
     
                     <label className='form-label' for="question-4">
                         4. Can you state, in clear language, the key features of your product or service?
                     </label>
-                    <textarea className='form-input' id="question-4" col="3" row="5" />
+                    <input className='form-input' name='features' id="question-4" col="3" row="5" />
     
                     <label className='form-label' for="question-5">
                         5. Does your idea already exist in the same way you were going to create it?
                     </label>
-                    <textarea className='form-input' id="question-5" col="3" row="5" />
+                    <input className='form-input' name='exists' id="question-5" col="3" row="5" />
                     <button className="form-button" type="submit">Submit</button>
                 </form>
             </div>
