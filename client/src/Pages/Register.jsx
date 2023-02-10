@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -61,6 +62,7 @@ const ToastProps = {
 
 const Register = () => {
 
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({});
 
@@ -73,6 +75,10 @@ const Register = () => {
     const check = await axios.post("http://localhost:5000/register", formData);
     if (check.data.status == "sucess") {
       toast.success('Registered Successfuly', ToastProps)
+      setTimeout(()=>{
+        navigate('/login');
+      },3000)
+      
     }
     else {
 

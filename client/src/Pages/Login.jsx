@@ -2,7 +2,8 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -53,25 +54,42 @@ const Button = styled.button`
   }
 `;
 
+
+const ToastProps = {
+  position: "top-center", autoClose: 3000, hideProgressBar: true, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, theme: "colored",
+}
 const Register = () => {
-  const handleLogin = async () => {
-    const check = await axios.post("http://localhost:5000/register", {
-      name: "Harshit",
-    });
+  const [formData, setFormData] = useState({});
+
+  const handleInputChange = e => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+
+  const handleLogin = async () => {
+    const check = await axios.post("http://localhost:5000/login", formData);
+    console.log(check.data)
+    if (check.data.status == "sucess") {
+      toast.success('Logged in Successfuly', ToastProps)
+    }
+    else if (check.data.status == "failed"){
+      toast.error('Inccorrect Email or Password', ToastProps)
+    }
+
+  };
   return (
     <>
       <Wrapper>
         <Container>
          
-          <Input type="email" name="email" placeholder="Email" />
+          <Input type="email" name="email" placeholder="Email" onChange={handleInputChange}/>
          
-          <Input type="password" name="password" placeholder="Password" />
+          <Input type="password" name="password" placeholder="Password"  onChange={handleInputChange}/>
           
-          <Button  type="submit">
+          <Button  onClick={handleLogin}type="submit">
             Login
           </Button>
+          <ToastContainer />
         </Container>
       </Wrapper>
     </>
