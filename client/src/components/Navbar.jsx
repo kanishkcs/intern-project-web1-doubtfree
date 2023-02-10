@@ -92,18 +92,13 @@ const Button = styled.button`
   border: none;
   padding: 10px;
   margin-right: 8px;
-  transition: all 0.5s ease-in-out;
+  /* transition: all 0.5s ease-in-out; */
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   cursor: pointer;
 
   &:hover {
-    background-image: linear-gradient(
-    to right,
-    
-  
-    #381e3b,
-    #4d1d4a,
-    #2e182a
-  );
+   background-color:rgb(100, 7, 97);
     color: white;
   }
   @media only screen and (max-width: 500px) {

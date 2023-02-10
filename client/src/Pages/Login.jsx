@@ -54,7 +54,7 @@ const Button = styled.button`
 `;
 
 const Register = () => {
-  const handleRegister = async () => {
+  const handleLogin = async () => {
     const check = await axios.post("http://localhost:5000/register", {
       name: "Harshit",
     });
@@ -64,17 +64,13 @@ const Register = () => {
     <>
       <Wrapper>
         <Container>
-          <Input type="text" name="name" placeholder="Full Name" />
+         
           <Input type="email" name="email" placeholder="Email" />
-          <Input type="text" name="mobile" placeholder="mobile" />
+         
           <Input type="password" name="password" placeholder="Password" />
-          <Input
-            type="text"
-            name="confirm-password"
-            placeholder="Confirm-Password"
-          />
-          <Button onClick={handleRegister} type="submit">
-            Register
+          
+          <Button  type="submit">
+            Login
           </Button>
         </Container>
       </Wrapper>
