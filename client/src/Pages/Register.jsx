@@ -55,7 +55,8 @@ const Button = styled.button`
 `;
 
 
-const ToastProps = {position: "top-center",  autoClose: 3000,  hideProgressBar: true, closeOnClick: true,pauseOnHover: true, draggable: true, progress: undefined,  theme: "colored",
+const ToastProps = {
+  position: "top-center", autoClose: 3000, hideProgressBar: true, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, theme: "colored",
 }
 
 const Register = () => {
@@ -63,20 +64,22 @@ const Register = () => {
 
   const [formData, setFormData] = useState({});
 
-const handleInputChange = e => {
-  setFormData({ ...formData, [e.target.name]: e.target.value });
-};
+  const handleInputChange = e => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
 
   const handleRegister = async () => {
     const check = await axios.post("http://localhost:5000/register", formData);
-    if (check.data.status == "sucess"){
+    if (check.data.status == "sucess") {
       toast.success('Registered Successfuly', ToastProps)
     }
-    else{
-      
-      if(check.data.code==11000){
-        toast.error(Object.keys(check.data.keyPattern)[0] + " Allready Exists", ToastProps);
+    else {
+
+      if (check.data.code == 11000) {
+        const ErrorKey = Object.keys(check.data.keyPattern)[0];
+
+        toast.error(ErrorKey.charAt(0).toUpperCase() + ErrorKey.slice(1) + " Allready Exists", ToastProps);
       }
     }
   };
@@ -85,10 +88,10 @@ const handleInputChange = e => {
     <>
       <Wrapper>
         <Container>
-          <Input type="text" name="name" placeholder="Full Name" onChange={handleInputChange}/>
+          <Input type="text" name="name" placeholder="Full Name" onChange={handleInputChange} />
           <Input type="email" name="email" placeholder="Email" onChange={handleInputChange} />
           <Input type="number" name="mobile" placeholder="mobile" onChange={handleInputChange} />
-          <Input type="password" name="password" placeholder="Password" onChange={handleInputChange}  />
+          <Input type="password" name="password" placeholder="Password" onChange={handleInputChange} />
           <Input
             type="text"
             name="confirm-password"
