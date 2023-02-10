@@ -38,6 +38,7 @@ mongoose
 
 
 app.get('/', (req, res)=>{
+
 res.send("Welcome to your server")
 })
 
@@ -47,19 +48,25 @@ res.send("Welcome to your server")
 })
 
 app.post('/register', (req, res) =>{
-var usr_full_name = req.body.name
-var usr_email = req.body.email
-var usr_mobile = req.body.mobile
-var usr_password = req.body.password 
-const user = new User({ name: usr_full_name , email: usr_email, mobile: usr_mobile, password: usr_password  });
+console.log(req.body.name)
+ 
+
+const user = new User( {name: req.body.name });
 user.save((error) => {
   if (error) {
     console.log(error);
+
+    return res.send(error);
   } else {
     console.log('User saved successfully!');
+    return res.status(200).json({status:"sucess"})
+    
 
   } 
 });
+
+console.log("You got the job")
+console.log(req.body)
 })
 
 

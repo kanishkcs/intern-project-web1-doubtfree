@@ -1,5 +1,8 @@
 import React from 'react'
 import styled, { css } from "styled-components";
+import { useState,useEffect } from 'react';
+import axios from 'axios'
+
 
 const Wrapper = styled.div`
 
@@ -12,9 +15,19 @@ const Input = styled.input`
 
 
 const Register = () => {
+   
+  
+
+
+  const  handleRegister = async ()=>{
+  const  check = await axios.post("http://localhost:5000/register", {name:"Harshit"})
+
+
+  }
+
   return (
     <>
-    <form action="http://localhost:5000/register" method='POST'>
+   
     <Wrapper>
 
     <Input type="text" name="name" placeholder='Full Name' />
@@ -22,12 +35,12 @@ const Register = () => {
     
     <Input type="text" name="mobile" placeholder='mobile' />
     <Input type="password" name="password" placeholder='password' />
-    <button type='submit'>Submit</button>
+    <button onClick={handleRegister} type='submit'>Submit</button>
     
     </Wrapper>
 
 
-    </form>
+   
 
 
     </>
