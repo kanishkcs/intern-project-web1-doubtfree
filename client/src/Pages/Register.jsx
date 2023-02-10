@@ -2,7 +2,8 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -53,21 +54,41 @@ const Button = styled.button`
   }
 `;
 
+
+const ToastProps = {position: "top-center",  autoClose: 3000,  hideProgressBar: true, closeOnClick: true,pauseOnHover: true, draggable: true, progress: undefined,  theme: "colored",
+}
+
 const Register = () => {
+
+
+  const [formData, setFormData] = useState({});
+
+const handleInputChange = e => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+};
+
+
   const handleRegister = async () => {
-    const check = await axios.post("http://localhost:5000/register", {
-      name: "Harshit",
-    });
+    const check = await axios.post("http://localhost:5000/register", formData);
+    if (check.data.status == "sucess"){
+      toast.success('Registered Successfuly', ToastProps)
+    }
+    else{
+      
+      if(check.data.code==11000){
+        toast.error(Object.keys(check.data.keyPattern)[0] + " Allready Exists", ToastProps);
+      }
+    }
   };
 
   return (
     <>
       <Wrapper>
         <Container>
-          <Input type="text" name="name" placeholder="Full Name" />
-          <Input type="email" name="email" placeholder="Email" />
-          <Input type="text" name="mobile" placeholder="mobile" />
-          <Input type="password" name="password" placeholder="Password" />
+          <Input type="text" name="name" placeholder="Full Name" onChange={handleInputChange}/>
+          <Input type="email" name="email" placeholder="Email" onChange={handleInputChange} />
+          <Input type="number" name="mobile" placeholder="mobile" onChange={handleInputChange} />
+          <Input type="password" name="password" placeholder="Password" onChange={handleInputChange}  />
           <Input
             type="text"
             name="confirm-password"
@@ -76,6 +97,7 @@ const Register = () => {
           <Button onClick={handleRegister} type="submit">
             Register
           </Button>
+          <ToastContainer />
         </Container>
       </Wrapper>
     </>
