@@ -8,6 +8,9 @@ import Error from './Pages/Error'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Register from './Pages/Register'
 import Login from './Pages/Login'
+import CompanyFormation from './Pages/CompanyFormation'
+import Technical from './Pages/Technical'
+import Mentor from './Pages/Mentor'
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} /> 
         <Route path="/idea" element={<Idea />} />
+        <Route path="/company" element={<CompanyFormation />} />
+        <Route path="/mentoring" element={<Mentor />} />
+        <Route path="/technical" element={<Technical />} />
         <Route path="*" element={<Error/>} />
         <Route path="/register" element={<Register/>} />
 
