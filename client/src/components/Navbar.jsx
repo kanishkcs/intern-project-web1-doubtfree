@@ -84,20 +84,22 @@ const ButtonContainer = styled.div`
 
 `;
 const Button = styled.button`
-  width: 6em;
-  height: 2.4rem;
+
   border-radius: 20px;
   font-size: 1rem;
   font-weight: 200;
-  background-color: #fcf9f9;
+  
   border: none;
   padding: 10px;
   margin-right: 8px;
-  transition: all 0.4s ease;
+  /* transition: all 0.5s ease-in-out; */
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   cursor: pointer;
 
   &:hover {
-    font-size: 1.2rem;
+   background-color:rgb(100, 7, 97);
+    color: white;
   }
   @media only screen and (max-width: 500px) {
     width: auto;
@@ -157,28 +159,28 @@ const Navbar = () => {
             <Search /> <SearchIcon className="icon" />
           </SearchContainer>
           <ButtonContainer>
-            <Button>Login</Button>
-            <Button>Sign Up</Button>
+            <Link className="no-css" to="/login"><Button>Login</Button></Link>
+            <Link className="no-css" to="/register"><Button>Sighn up</Button></Link>
           </ButtonContainer>
           
         </TopRight>
       </Top>
       <Bottom>
         <Nav>
-          <Link className="nav-items" to="/">Home</Link>
-          <Link className="nav-items" to="/idea">Idea Validation</Link>
-          <Link className="nav-items" to="/company">Company Formation</Link>
-          <Link className="nav-items" to="/mentoring">MENTORING & INCUBATION</Link>
-          <Link className="nav-items" to="/technical">TECHINCAL & MARKETING</Link>
-          <Link className="nav-items" to="/funding">FUNDING & BANKING</Link>
+          <Link className="no-css " to="/">Home</Link>
+          <Link className="no-css" to="/idea">Idea Validation</Link>
+          <Link className="no-css" to="/company">Company Formation</Link>
+          <Link className="no-css" to="/mentoring">MENTORING & INCUBATION</Link>
+          <Link className="no-css" to="/technical">TECHINCAL & MARKETING</Link>
+          <Link className="no-css" to="/funding">FUNDING & BANKING</Link>
         </Nav>
         <Sidebar>
-        <Link className="nav-items" to="/">Home</Link>
-          <Link className="nav-items" to="/idea">Idea Validation</Link>
-          <Link className="nav-items" to="/company">Company Formation</Link>
-          <Link className="nav-items" to="/mentoring">MENTORING & INCUBATION</Link>
-          <Link className="nav-items" to="/technical">TECHINCAL & MARKETING</Link>
-          <Link className="nav-items" to="/funding">FUNDING & BANKING</Link>
+        <Link className="no-css" to="/">Home</Link>
+          <Link className="no-css" to="/idea">Idea Validation</Link>
+          <Link className="no-css" to="/company">Company Formation</Link>
+          <Link className="no-css" to="/mentoring">MENTORING & INCUBATION</Link>
+          <Link className="no-css" to="/technical">TECHINCAL & MARKETING</Link>
+          <Link className="no-css" to="/funding">FUNDING & BANKING</Link>
         </Sidebar>
       </Bottom>
     </Container>

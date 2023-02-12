@@ -1,5 +1,4 @@
 import React from 'react'
-import IdeaForm from '../components/IdeaForm'
 import './Idea.css'
 
 function Idea() {
@@ -20,15 +19,42 @@ function Idea() {
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
             </ol>
         </div>
+        <h2>Fill your response here:</h2>
         <div className='idea-container'>
+            <div className="left-idea-container">
+                <form action='http://localhost:5000/idea' method='POST'>
+                    <label className='form-label' name="problem" for="question-1"> 
+                        1. What problem are you solving?
+                    </label>
+                    <input className='form-input' name='problem' id="question-1" col="3" row="5" />
+    
+                    <label className='form-label' for="question-2">
+                         2. How have others attempted to solve this problem before, and why did their solutions succeed or fail?
+                    </label>
+                    <input className='form-input' name='others' id="question-2" col="3" row="5" />
+                    
+                    <label className='form-label' for="question-3"> 
+                        3. How many specific benefits for your product or idea can you list?
+                    </label>
+                    <input className='form-input' name='benifits' id="question-3" col="3" row="5" />
+    
+                    <label className='form-label' for="question-4">
+                        4. Can you state, in clear language, the key features of your product or service?
+                    </label>
+                    <input className='form-input' name='features' id="question-4" col="3" row="5" />
+    
+                    <label className='form-label' for="question-5">
+                        5. Does your idea already exist in the same way you were going to create it?
+                    </label>
+                    <input className='form-input' name='exists' id="question-5" col="3" row="5" />
+                    <button className="form-button" type="submit">Submit</button>
+                </form>
+            </div>
+    
             <div className="right-idea-container">
+                <h2>OR</h2>
                 <h2 >Connect directly to our expert.</h2>
                 <button>Expert Advice</button>
-                <h3>OR</h3>
-                <h3>Fill the following form.</h3>
-            </div>
-            <div className="left-idea-container">
-                <IdeaForm />
             </div>
         </div>
     </div>

@@ -1,13 +1,103 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100&family=Roboto&display=swap');
+
+
+* {
+  box-sizing: border-box;
+ 
+  font-family: 'Roboto', sans-serif;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-image: linear-gradient(
+    to right,
+    #2a1a33,
+    #2c1933,
+    #381e3b,
+    #4d1d4a,
+    #2e182a
+  );
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.icon{
+  position: absolute;
+  top: 25%;
+  right: 2%;
+  transform: translateY(-50%);
+  
+  width: 20px;
+  height: auto;
+  z-index: 1;
+  
 }
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+
+
+
+
+@media only screen and (max-width: 500px){
+    .icon{
+      top:30%;
+    }
+    .toggle-icon:hover{
+      cursor: pointer !important;
+      transform: translateY(180deg);
+    }
+}
+@media only screen and (max-width: 365px){
+  .icon{
+    top:27%;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    68.6deg,
+    rgb(252, 165, 241) 1.8%,
+    rgb(181, 255, 255) 100.5%
+  );
+  height: 100vh;
+}
+
+.heading {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color : white;
+}
+
+.grid-item {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+.no-css{
+  text-decoration: none;
+  color: white;
+}
+
+.no-css:hover{
+  color: lightcyan ;
+}
+
+@media (max-width: 800px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
