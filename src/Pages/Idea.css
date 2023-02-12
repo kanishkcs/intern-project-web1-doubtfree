@@ -1,8 +1,9 @@
 .idea-container
 {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; */
+    display: block;
 }
 
 .idea-validation-section{
@@ -16,11 +17,12 @@
 }
 
 .left-idea-container, .right-idea-container{
-    margin: 0 2rem;
+    margin: 3rem 2rem;
 }
 
 .left-idea-container{
-    flex: 2;
+    flex: 1;
+    margin: 0 auto
 }
 
 .right-idea-container{
@@ -53,6 +55,7 @@
     width: 100% ;
     padding: 0.5rem 1rem;
     resize: none;
+    border: none;
 }
 
 .form-button
@@ -62,7 +65,6 @@
     color : #fff ;
     padding: 0.5rem 2rem;
     border : 1px solid rgb(100, 7, 97); 
-    
 }
 
 .form-button:hover{
@@ -101,18 +103,6 @@
     font-size: 3rem;
 }
 
-@media screen and (max-width: 768px){
-    .idea-container{
-        flex-direction: column;
-    }
-    
-    .left-idea-container, .right-idea-container{
-        margin: 1rem 0;
-    }
-    
-    .idea-validation-section{
-        padding: 1.5rem 2rem ;
-        
-
-    }
-} 
+.red{
+    color: red;
+}

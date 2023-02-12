@@ -4,6 +4,7 @@ import Idea from './Pages/Idea'
 import Home from './Pages/Home'
 import Footer from './components/Footer'
 import Error from './Pages/Error'
+import Funding from './Pages/Funding'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} /> 
         <Route path="/idea" element={<Idea />} />
+        <Route path='/funding' element={<Funding/>}/>
         <Route path="*" element={<Error/>} />
       </Routes>
       <Footer /> 
