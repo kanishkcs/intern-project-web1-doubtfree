@@ -1,0 +1,152 @@
+.technical-container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.technical-section{
+    color: #fff;
+    padding: 3rem 7rem;
+    text-align: justify;
+}
+
+ol.marketing-list {
+    padding: 0px 300px;
+    margin: 30px 0px;
+    column-count: 4;
+    list-style: none;
+}
+
+.marketing-list li a {
+    border-radius: 25px;
+    background-color: #ffffff;
+    padding: 5%;
+    text-decoration: none;
+    color: #000;
+}
+
+ol.technical-list {
+    padding: 0px 300px;
+    margin: 30px 0px;
+    column-count: 4;
+    list-style: none;
+}
+
+.technical-list li a {
+    border-radius: 25px;
+    background-color: #ffffff;
+    padding: 5%;
+    text-decoration: none;
+    color: #000;
+}
+
+.technical-services {
+    text-align: center;
+}
+
+.technical-services, .technical-introduction{
+    margin: 3rem 0;
+}
+
+.left-technical-container, .right-technical-container{
+    margin: 0 2rem;
+}
+
+.left-technical-container{
+    flex: 2;
+}
+
+.right-technical-container{
+    flex: 1;
+    text-align: center;
+}
+
+.right-technical-container > h2 {
+    color: #fff;   
+}
+
+.left-technical-container > form
+{
+    background-color: rgb(202, 182, 207);
+    padding : 2rem 3rem;
+    border-radius: 10px;
+    color: #000;
+}
+
+.form-label {
+    display : block;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-input{
+    display : block;
+    border-radius: 5px;
+    margin: 0 0 1rem;
+    width: 100% ;
+    padding: 0.5rem 1rem;
+    resize: none;
+}
+
+.form-button
+{
+    border-radius: 5px;
+    background-color: rgb(100, 7, 97);
+    color : #fff ;
+    padding: 0.5rem 2rem;
+    border : 1px solid rgb(100, 7, 97); 
+    
+}
+
+.form-button:hover{
+    color : rgb(100, 7, 97);
+    background-color: rgb(202, 182, 207);
+}
+
+.right-technical-container > button
+{
+   padding: 0.5rem 2rem; 
+   color : rgb(100, 7, 97);
+   background-color: rgb(202, 182, 207);
+   border-radius: 5px;
+   border : 1px solid rgb(202, 182, 207);
+   margin : 1rem 0;
+}
+
+.right-technical-container > button:hover
+{
+    color :rgb(202, 182, 207);
+    background-color: rgb(100, 7, 97);
+}
+
+.nav-items{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.error-container{
+    color: #fff;
+    margin: 5rem auto;
+    font-weight: 600;
+    text-align: center;
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 768px){
+    .technical-container{
+        flex-direction: column;
+    }
+    
+    .left-technical-container, .right-technical-container{
+        margin: 1rem 0;
+    }
+    
+    .technical-section{
+        padding: 1.5rem 2rem ;
+        
+
+    }
+} 

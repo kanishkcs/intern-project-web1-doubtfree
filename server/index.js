@@ -6,6 +6,7 @@ require("dotenv").config();
 const cors = require("cors");
 app.use(bodyParser.json());
 
+
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -17,7 +18,8 @@ app.use(cors());
 
 const User = require("./modal/users");
 const Idea = require("./modal/idea");
-
+const Technical = require("./modal/technical");
+const Funding = require("./modal/funding")
 mongoose
   .connect(process.env.MONGO_DB_URL)
   .then(() => console.log("Connected To Database"))
@@ -67,9 +69,47 @@ app.post("/idea", (req, res) => {
   });
   idea.save((error) => {
     if (error) {
-      console.log(error);
+      return res.send(error);
     } else {
-      console.log("Idea saved successfully!");
+      console.log("saved")
+     return res.status(200).json({status: "sucess"});
+    }
+  });
+});
+
+app.post("/technical", (req, res) => {
+  const tech = new Technical({
+    problem: req.body.tproblem,
+    others: req.body.tothers,
+    benifits: req.body.tbenifits,
+    keyfeature: req.body.tfeatures,
+    exists: req.body.texists,
+  });
+  tech.save((error) => {
+    if (error) {
+      return res.send(error);
+    } else {
+      console.log("saved")
+     return res.status(200).json({status: "sucess"});
+    }
+  });
+});
+
+
+app.post("/funding", (req, res) => {
+  const fund = new Funding({
+    problem: req.body.fproblem,
+    others: req.body.fothers,
+    benifits: req.body.fbenifits,
+    keyfeature: req.body.ffeatures,
+    exists: req.body.fexists,
+  });
+  fund.save((error) => {
+    if (error) {
+      return res.send(error);
+    } else {
+      console.log("saved")
+     return res.status(200).json({status: "sucess"});
     }
   });
 });

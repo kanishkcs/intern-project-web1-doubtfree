@@ -4,6 +4,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
+
+
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -59,6 +63,9 @@ const ToastProps = {
   position: "top-center", autoClose: 3000, hideProgressBar: true, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, theme: "colored",
 }
 const Register = () => {
+
+
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({});
 
   const handleInputChange = e => {
@@ -68,9 +75,12 @@ const Register = () => {
 
   const handleLogin = async () => {
     const check = await axios.post("http://localhost:5000/login", formData);
-    console.log(check.data)
+ 
     if (check.data.status == "sucess") {
       toast.success('Logged in Successfuly', ToastProps)
+      setTimeout(()=>{
+        navigate('/');
+      },3000)
     }
     else if (check.data.status == "failed"){
       toast.error('Inccorrect Email or Password', ToastProps)
