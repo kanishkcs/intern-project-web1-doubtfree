@@ -7,7 +7,6 @@ import mentor from "../assets/mentor.png";
 import meeting from "../assets/meeting2.png";
 import money from "../assets/money.png";
 
-import {Link } from "react-router-dom"
 const Item = styled.div`
   display: flex;
   flex-direction: column;
@@ -62,29 +61,22 @@ const Services = () => {
       <Main>
         <Heading> Our Popular Services</Heading>
         <Carousel breakPoints={breakPoints}>
-          
           <Item>
             <Logo src={webdev} />
             <Heading>Develope Your WebSite</Heading>
           </Item>
-          <Link  className="no-css" to="/funding">
           <Item>
             <Logo src={meeting} />
             <Heading>Private Limited Company Registration</Heading>
           </Item>
-          </Link>
-          <Link  className="no-css" to="/funding">
           <Item>
             <Logo src={money} />
-             <Heading>Connection with Investor for seed Funding</Heading>
+            <Heading>Connection with Investor for seed Funding</Heading>
           </Item>
-          </Link>
-          <Link  className="no-css" to="/mentorship">
           <Item>
             <Logo src={mentor} />
             <Heading>Mentorship for Your startup</Heading>
           </Item>
-          </Link>
           <Item>
             <Logo src={mentor} />
             <Heading>Develope your WebSite</Heading>
